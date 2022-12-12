@@ -11,7 +11,6 @@ let bodyOption = {
 let getAPI = async () => {
   return await fetch("https://id.twitch.tv/oauth2/token", {
     method: "POST",
-
     headers: {
       "Content-Type": "application/json",
     },
@@ -38,7 +37,7 @@ let getUser = async () => {
       }
     );
     let users = await getChannels.json();
-    console.log(users);
+
     allStreams.push(...users.data);
     if (users.pagination.cursor) {
       cursor = `&after=${users.pagination.cursor}`;

@@ -4,12 +4,12 @@ const streamersElem = document.querySelector(".streams");
 
 let createStreamers = (streams) => {
   loading.style.display = "none";
-  console.log(streams);
+
   streams.reverse().forEach((stream) => {
     streamersElem.insertAdjacentHTML(
       "afterbegin",
       `
-        <a href="https://www.twitch.tv/${stream.user_login}" class="streams-item" target="_blank">
+        <a href="https://www.twitch.tv/${stream.user_login}" data-aos="fade-up" data-aos-once="false"  data-aos-delay="200" class="streams-item" target="_blank">
         <div class="streams-thumbnail-parent">
           <img
             src="https://static-cdn.jtvnw.net/previews-ttv/live_user_${stream.user_login}-600x350.jpg"

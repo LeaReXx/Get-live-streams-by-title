@@ -284,6 +284,7 @@ header {
 
 .streams-thumbnail-parent {
   min-height: 80px;
+  min-width: 280px;
 }
 
 .streams-thumbnail-parent img {
