@@ -1,0 +1,38 @@
+AOS.init();
+const loading = document.querySelector(".loading");
+const streamersElem = document.querySelector(".streams");
+
+let createStreamers = (streams) => {
+  loading.style.display = "none";
+  console.log(streams);
+  streams.reverse().forEach((stream) => {
+    streamersElem.insertAdjacentHTML(
+      "afterbegin",
+      `
+        <a href="https://www.twitch.tv/${stream.user_login}" class="streams-item" target="_blank">
+        <div class="streams-thumbnail-parent">
+          <img
+            src="https://static-cdn.jtvnw.net/previews-ttv/live_user_${stream.user_login}-600x350.jpg"
+            alt="${stream.user_login}"
+            class="streams-thumbnail-img"
+          />
+        </div>
+        <div class="streams-detail-parent">
+          <div class="streams-name-view">
+            <p class="stream-name">${stream.user_name}</p>
+            <div class="stream-viewers-count">
+              <i class="fa-regular fa-eye"></i>
+              <span>${stream.viewer_count}</span>
+            </div>
+          </div>
+          <div class="stream-title-parent">
+            <p class="stream-title" title="${stream.title}">${stream.title}</p>
+          </div>
+        </div>
+      </a>
+        `
+    );
+  });
+};
+
+export { createStreamers };
