@@ -26,6 +26,7 @@ header {
 
 .top-title {
   font-size: 10px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -328,6 +329,16 @@ header {
   text-overflow: ellipsis;
 }
 
+@media screen and (min-width: 400px) {
+  .top-title {
+    font-size: 14px;
+  }
+
+  .top-title i {
+    font-size: 28px;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .streams-item {
     min-width: 280px;
@@ -355,8 +366,6 @@ header {
     max-width: 24%;
   }
 }
-
-
 
 @media screen and (min-width: 1600px) {
   .streams-item {
