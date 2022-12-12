@@ -274,11 +274,11 @@ header {
   border: 2px solid hwb(0 0% 100% / 0.7);
   outline: 2px solid hwb(264 27% 0% / 0.7);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .streams-item:hover {
-  transform: scale(1.03);
+  transform: scale(1.03) !important;
   backdrop-filter: unset;
 }
 
