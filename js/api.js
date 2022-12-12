@@ -20,13 +20,21 @@ let getAPI = async () => {
 
 let allStreams = [];
 let cursor = "";
-// let resPerReq = 100;
+// get live by game, Api link
+const apiLink = "https://api.twitch.tv/helix/streams?";
+// game id, Ex: 32982 = Grand Theft Auto V
+const gameid = 32982;
+// stream type can receive one of these values: "all" or "live"
+const streamType = "live";
+// Receives the language of the stream Ex:"en"
+const streamLang = "en";
+// Api reference: https://dev.twitch.tv/docs/api/reference#get-streams
 let getUser = async () => {
   try {
     let getResponse = await getAPI();
     let response = await getResponse.json();
     let getChannels = await fetch(
-      `https://api.twitch.tv/helix/streams?game_id=32982&first=100&type=live${cursor}&language=en`,
+      `${apiLink}game_id=${gameid}&first=100&type=${streamType}${cursor}&language=${streamLang}`,
       {
         method: "get",
         headers: {
@@ -57,7 +65,7 @@ let filterStreams = () => {
       findedNpLiveStream.push(eachStream);
     }
   });
-  createStreamers(findedNpLiveStream)
+  createStreamers(findedNpLiveStream);
 };
 window.onload = getUser();
 
