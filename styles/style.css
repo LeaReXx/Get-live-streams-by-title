@@ -342,14 +342,7 @@ header {
 @media screen and (min-width: 600px) {
   .streams-item {
     min-width: 280px;
-    max-width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .streams-item {
-    min-width: 230px;
-    max-width: 30%;
+    max-width: 45%;
   }
 }
 
