@@ -1,10 +1,15 @@
+import { respondTypes } from "../types/Api";
 AOS.init();
-const loading = document.querySelector(".loading");
-const streamersElem = document.querySelector(".streams");
-let createStreamers = (streams) => {
-    loading.style.display = "none";
-    streams.reverse().forEach((stream) => {
-        streamersElem.insertAdjacentHTML("afterbegin", `
+const loading = document.querySelector(".loading") as HTMLDivElement;
+const streamersElem = document.querySelector(".streams") as HTMLDivElement;
+
+let createStreamers = (streams: respondTypes[]) => {
+  loading.style.display = "none";
+
+  streams.reverse().forEach((stream: respondTypes) => {
+    streamersElem.insertAdjacentHTML(
+      "afterbegin",
+      `
         <a href="https://www.twitch.tv/${stream.user_login}" data-aos="fade-up" data-aos-once="false"  data-aos-delay="200" class="streams-item" target="_blank">
         <div class="streams-thumbnail-parent">
           <img
@@ -26,7 +31,9 @@ let createStreamers = (streams) => {
           </div>
         </div>
       </a>
-        `);
-    });
+        `
+    );
+  });
 };
+
 export default createStreamers;
