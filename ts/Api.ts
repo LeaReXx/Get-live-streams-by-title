@@ -42,7 +42,6 @@ let getUser = async () => {
     let getResponse: Response = await getAPI();
 
     let response: apiResponseType = await getResponse.json();
-    console.log(response);
 
     let getChannels = await fetch(
       `${apiLink}game_id=${gameid}&first=100&type=${streamType}${cursor}&language=${streamLang}`,
