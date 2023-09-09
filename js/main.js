@@ -1,4 +1,3 @@
-AOS.init();
 const loading = document.querySelector(".loading");
 const streamersElem = document.querySelector(".streams");
 let createStreamers = (streams) => {

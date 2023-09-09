@@ -1,5 +1,4 @@
 import { respondTypes } from "../types/Api";
-AOS.init();
 const loading = document.querySelector(".loading") as HTMLDivElement;
 const streamersElem = document.querySelector(".streams") as HTMLDivElement;
 
