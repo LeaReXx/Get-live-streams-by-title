@@ -1,4 +1,4 @@
-import createStreamers from "./Main.js";
+import createStreamers from "./main.js";
 import { respondTypes } from "../types/Api.js";
 let clientID = "ziyrb5v49cybtar32bhc8wmg10quy2";
 let clientSecret = "05ci5wa7mzat8q9tqenrfaiobz8wah";
