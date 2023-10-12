@@ -1,9 +1,12 @@
 const loading = document.querySelector(".loading");
 const streamersElem = document.querySelector(".streams");
+const devMessage = document.querySelector(".dev-message");
 let createStreamers = (streams) => {
-    loading.style.display = "none";
-    streams.reverse().forEach((stream) => {
-        streamersElem.insertAdjacentHTML("afterbegin", `
+  loading.style.display = "none";
+  streams.reverse().forEach((stream) => {
+    streamersElem.insertAdjacentHTML(
+      "afterbegin",
+      `
         <a href="https://www.twitch.tv/${stream.user_login}" data-aos="fade-up" data-aos-once="false"  data-aos-delay="200" class="streams-item" target="_blank">
         <div class="streams-thumbnail-parent">
           <img
@@ -25,7 +28,17 @@ let createStreamers = (streams) => {
           </div>
         </div>
       </a>
-        `);
-    });
+        `
+    );
+  });
 };
 export default createStreamers;
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    devMessage.classList.add("active");
+  }, 1000);
+});
+
+devMessage.addEventListener("click", () => {
+  devMessage.classList.remove("active");
+});

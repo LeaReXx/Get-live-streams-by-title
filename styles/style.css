@@ -366,3 +366,31 @@ header {
     max-width: 19%;
   }
 }
+
+.dev-message {
+  position: fixed;
+  background: rgb(255, 118, 118);
+  background: linear-gradient(
+    162deg,
+    rgba(255, 118, 118, 1) 0%,
+    rgba(255, 113, 23, 1) 88%
+  );
+  padding: 20px;
+  font-weight: 400;
+  width: 300px;
+  z-index: 10;
+  bottom: 50px;
+  transform: translateX(-500px);
+  visibility: hidden;
+  transition: all 0.3s;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0 8px 8px 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.dev-message.active {
+  transform: translate(0);
+  visibility: visible;
+}

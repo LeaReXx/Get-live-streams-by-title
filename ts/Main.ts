@@ -1,6 +1,7 @@
 import { respondTypes } from "../types/Api";
 const loading = document.querySelector(".loading") as HTMLDivElement;
 const streamersElem = document.querySelector(".streams") as HTMLDivElement;
+const devMessage = document.querySelector(".dev-message") as HTMLDivElement;
 
 let createStreamers = (streams: respondTypes[]) => {
   loading.style.display = "none";
@@ -36,3 +37,11 @@ let createStreamers = (streams: respondTypes[]) => {
 };
 
 export default createStreamers;
+
+window.addEventListener("load", () => {
+  
+});
+
+setTimeout(() => {
+  devMessage.classList.add("active");
+}, 1000);
